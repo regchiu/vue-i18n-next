@@ -1,6 +1,6 @@
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
-import vueI18n from '@intlify/vite-plugin-vue-i18n'
+import vueI18n from '@intlify/unplugin-vue-i18n/vite'
 import bodyParser from 'body-parser'
 
 /**
@@ -46,6 +46,8 @@ export default defineConfig({
   plugins: [
     backend(),
     vue(),
-    vueI18n({ compositionOnly: true, fullInstall: false })
+    vueI18n({
+      jitCompilation: true
+    })
   ]
 })
